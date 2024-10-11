@@ -15,8 +15,15 @@ exchange_data = {
 }
 
 sensors = [
-        "uah_to_usd",
-        "usd_to_uah"
+        "Gold",
+        "Platinum",
+        "Silver",
+        "ABM",
+        "BTI",
+        "KO",
+        "euro_to_usd",
+        "pound_to_usd",
+        "usd_to_jpy"
 ]
 
 @app.route('/update', methods=['POST'])
