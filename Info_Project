@@ -1,0 +1,6 @@
+Створимо спільний проект web server , сенсори, веб сторінка :
+Циба Артем робить server.py
+Міроненко Діана робить файл index.html
+Клім Віталій робить сенсор sensor_Currency_pairs.py
+Дробаха Іван робить сенсор sensor_Actions.py
+Тютьков Михайло робить сенсор sensor_precious_metals/py
