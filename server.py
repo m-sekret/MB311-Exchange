@@ -3,8 +3,15 @@ app = Flask(__name__)
 
 # Зберігаємо поточні дані
 exchange_data = {
-        "uah_to_usd": 0.0,
-        "usd_to_uah": 0.0
+        "Gold": 0.0,
+        "Platinum": 0.0,
+        "Silver": 0.0,
+        "ABM": 0.0,
+        "BTI": 0.0,
+        "KO": 0.0,
+        "euro_to_usd": 0.0,
+        "pound_to_usd": 0.0,
+        "usd_to_jpy": 0.0
 }
 
 sensors = [
