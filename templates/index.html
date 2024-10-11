@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,
+					initial-scale=1.0">
+		<title>Current Weather</title>
+	</head>
+	<body>
+		<h1>Current Weather</h1>
+		<p>Temperature: <span id="temperature">0.0</span> °C</p>
+		<p>Humidity: <span id="humidity">0.0</span> %</p>
+		<p>Pressure: <span id="pressure">0.0</span> hPa</p>
+		<script>
+			async function fetchWeather() {
+				const response = await fetch('/current_weather');
+				const data = await response.json();
+				document.getElementById('temperature').textContent =
+					data.temperature;
+				document.getElementById('humidity').textContent =
+					data.humidity;
+				document.getElementById('pressure').textContent =
+					data.pressure;
+			}
+			setInterval(fetchWeather, 5000); // Оновлюємо кожні 5 секунд
+			fetchWeather();
+		</script>
+	</body>
+</html>
