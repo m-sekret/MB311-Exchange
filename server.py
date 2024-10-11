@@ -36,7 +36,7 @@ def update_exchange():
 
     return jsonify({"status": "success"}), 200
 
-@app.route('/current_exchange', methods=['GET'])
+@app.route('/current_market_data', methods=['GET'])
 def get_exchange(): return jsonify(exchange_data), 200
 
 @app.route('/')
