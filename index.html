@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Current Market Data</title>
+</head>
+<body>
+        <h1>Current Market Data</h1>
+
+        <!-- Валютні курси -->
+        <h2>Currency Exchange Rates</h2>
+        <p>Euro to USD: <span id="euro_to_usd">0.0</span></p>
+        <p>Pound to USD: <span id="pound_to_usd">0.0</span></p>
+        <p>USD to JPY: <span id="usd_to_jpy">0.0</span></p>
+
+        <!-- Акції -->
+        <h2>Stock Prices</h2>
+        <p>ABM: <span id="ABM">0.0</span></p>
+        <p>BTI: <span id="BTI">0.0</span></p>
+        <p>KO: <span id="KO">0.0</span></p>
+
+        <!-- Метали -->
+        <h2>Metals Prices</h2>
+        <p>Gold: <span id="Gold">0.0</span> USD/oz</p>
+        <p>Platinum: <span id="Platinum">0.0</span> USD/oz</p>
+        <p>Silver: <span id="Silver">0.0</span> USD/oz</p>
+
+        <script>
+                async function fetchMarketData() {
+                        const response = await fetch('/current_market_data');  // Звертаємось до API з біржовими даними
+                        const data = await response.json();
+                        
+                        
+                        document.getElementById('euro_to_usd').textContent = data.euro_to_usd;
+                        document.getElementById('pound_to_usd').textContent = data.pound_to_usd;
+                        document.getElementById('usd_to_jpy').textContent = data.usd_to_jpy;
+
+                        
+                        document.getElementById('ABM').textContent = data.abm;
+                        document.getElementById('BTI').textContent = data.bti;
+                        document.getElementById('KO').textContent = data.ko;
+
+                       
+                        document.getElementById('Gold').textContent = data.gold;
+                        document.getElementById('Platinum').textContent = data.platinum;
+                        document.getElementById('Silver').textContent = data.silver;
+                }
+
+                setInterval(fetchMarketData, 5000);  
+                fetchMarketData(); 
+        </script>
+</body>
+</html>
